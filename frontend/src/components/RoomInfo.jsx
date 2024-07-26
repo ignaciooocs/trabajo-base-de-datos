@@ -1,4 +1,8 @@
 export function RoomInfo ({ room }) {
+
+    if (!room) {
+        return <li className="w-3/4 flex flex-col gap-4 border border-gray-300 p-2">No hay habitaciones</li>
+    }
     return (
         <li className="w-3/4 flex flex-col gap-4 border border-gray-300 p-2">
             <p><b>numero de habitacion:</b> {room.room_number}</p>

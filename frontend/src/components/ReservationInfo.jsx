@@ -1,8 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigation } from "react-router-dom";
 import { GuestInfo } from "./GuestInfo";
 import { RoomInfo } from "./RoomInfo";
 
 export function ReservationInfo ({ reservation }) {
+
+    const navigation = useNavigation()
 
     async function deleteReservation(reservation_id) {
         try {
@@ -14,7 +16,7 @@ export function ReservationInfo ({ reservation }) {
         } catch (error) {
             console.log('Error al borrar la reserva ' + error)
         } finally {
-            queryClient.invalidateQueries(['reservations'])
+            navigation.navigate('/reservation')
         }
     }
 

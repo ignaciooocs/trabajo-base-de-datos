@@ -13,6 +13,8 @@ export function GuestInfo ({ guest }) {
         setView(!view)
     }
 
+    if (!guest) return <li className="w-3/4 flex flex-col gap-4 border border-gray-300 p-2">No hay huespedes</li>
+
     return (
         <li className="w-3/4 flex flex-col gap-4 border border-gray-300 p-2">
             <p><b>id:</b> {guest.guest_id}</p>
